@@ -56,23 +56,6 @@ for src, pre0, trg in zip(all_srcs, all_pres, trgs):
         print(pre0)
         print(pre)
 
-    # pre.replace("着名","著名")
-    # pre.replace("白著", "白薯")
-    # pre.replace("网路", "网络")
-    # pre.replace("东方名著", "东方明珠")
-    # pre.replace("天赋罗丼", "天妇罗丼")
-    # 的-了是否更好，吗-呢是否更好，那-哪
-    # print("pre:")
-    # for s, t in zip(list(src), list(pre)):
-    #     if s != t:
-    #         print(s + "->" + t)
-    # print("trg:")
-    # for s, t in zip(list(src), list(trg)):
-    #     if s != t:
-    #         print(s + "->" + t)
-    #
-    # print("\n")
-
     tokens = []
     words = list(src)
     i = 0
