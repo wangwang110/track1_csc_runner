@@ -6,7 +6,7 @@ from eval_char_level import get_char_metrics
 from eval_sent_level import get_sent_metrics
 import string
 
-vocab_path = "/data_local/plm_models/chinese_L-12_H-768_A-12/vocab.txt"
+vocab_path = "/home/plm_models/chinese_L-12_H-768_A-12/vocab.txt"
 vocab = []
 with open(vocab_path, "r", encoding="utf-8") as f:
     lines = f.readlines()

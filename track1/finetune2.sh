@@ -1,12 +1,11 @@
 
 # 第二阶段的微调
 
-PRETRAIN_MODEL=/data_local/plm_models/chinese-roberta-wwm-ext/
 
+CUDA_DEVICE=1
 
+PRETRAIN_MODEL=/home/plm_models/chinese-roberta-wwm-ext/
 step="2"
-CUDA_DEVICE=5
-
 
 tag="hsk"
 DATA_BASE=./track1_data/train/
@@ -16,7 +15,7 @@ TRAIN_FILE=$DATA_BASE/hsk/hsk_error_word_one_uniq
 
 #tag="all"
 #DATA_BASE=./track1_data/train/
-#TRAIN_FILE=$DATA_BASE/merge_one_wke
+#TRAIN_FILE=$DATA_BASE/merge_one_wke_uniq
 ## 使用所有的拼写纠错数据
 
 
@@ -66,13 +65,15 @@ fi
 BASE_MODEL=./roberta_pretrain/data_gen_1.pkl
 base_tag=roberta_data_gen_1
 # 第一种生成数据的方式预训练得到的模型
+
+
 # BASE_MODEL=./roberta_pretrain/data_gen_2.pkl
-## 第二种生成数据的方式预训练得到的模型
 #base_tag=roberta_data_gen_2
+## 第二种生成数据的方式预训练得到的模型
 
 
 # 训练
-MODEL_DIR="./model/"$step"_"$tag"_"$base_tag
+MODEL_DIR="./roberta_finetune/"$step"_"$tag"_"$base_tag
 mkdir -p $MODEL_DIR
 
 CUDA_VISIBLE_DEVICES=$CUDA_DEVICE python -u train_mlm.py \
@@ -84,7 +85,7 @@ CUDA_VISIBLE_DEVICES=$CUDA_DEVICE python -u train_mlm.py \
     --batch_size 32 \
     --load_path $BASE_MODEL \
     --tie_cls_weight True \
-	--patience 5 \
+	  --patience 5 \
     --tag $tag
 
 # > $MODEL_DIR"/log.txt"

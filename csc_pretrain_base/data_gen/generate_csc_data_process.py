@@ -52,7 +52,7 @@ def is_pinyin(src_char, tgt_char):
 
 
 vob = set()
-with open("/data_local/plm_models/chinese_L-12_H-768_A-12/vocab.txt", "r", encoding="utf-8") as f:
+with open("/home/plm_models/chinese_L-12_H-768_A-12/vocab.txt", "r", encoding="utf-8") as f:
     for line in f.readlines():
         vob.add(line.strip())
 

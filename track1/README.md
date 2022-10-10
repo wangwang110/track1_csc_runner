@@ -1,16 +1,30 @@
 
-测试模型效果:
+
+### 微调 & 精调
+
+
+两阶段训练：（1）基本数据为1300w，使用生成两份数据，分别进行预训练 （2） 使用hsk提取到的拼写纠错数据和SIGAHN进行微调
 
 `
-sh ./decode_mlm_em.sh
+sh ./finetune2.sh
 `
 
-roberta微调模型下载地址：https://pan.baidu.com/s/1elTuRZZv2fZWBKw-EFKyRw 
-提取码：5efm
+
+三阶段训练: (1）基本数据为1300w，使用生成两份数据，分别进行预训练 （2）使用所有能获取到得拼写纠错数据进行微调 （3）使用SIGHAN数据进行精调
 
 
-roberta预训练模型下载地址：https://pan.baidu.com/s/1ytFv7XpnPbftsleX9SHXyA
-提取码：kgte
+`
+sh ./finetune2.sh` 需要修改一些配置
 
+`
+sh ./finetune3_only_sighan.sh
+`
 
+利用验证集进行三阶段训练： (1）基本数据为1300w，使用生成两份数据，分别进行预训练 （2）使用所有能获取到得拼写纠错数据进行微调 （3）使用验证集数据进行精调
 
+`
+sh ./finetune2.sh` 需要修改一些配置
+
+`
+sh ./finetune3_only_valid.sh
+`

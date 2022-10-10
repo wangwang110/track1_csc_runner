@@ -5,7 +5,7 @@ name=pretrain
 
 valid_data=./data/ccl_trck1_dev.txt
 test_data=./data/13test.txt
-bert_path=./plm_models/chinese-macbert-base/
+bert_path=/home/plm_models/chinese-macbert-base/
 # 预训练模型路径
 train_data=./data/13train.txt
 # 使用生成的数据路径替换

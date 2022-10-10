@@ -2,7 +2,7 @@
 ## 文件说明
 
 
-生成数据的方法
+### 生成数据的方法
 
 第一种： 按照一定的比例，随机替换句子中正确的汉字为对应的易混淆汉字，以0.25为例
 
@@ -18,3 +18,12 @@ python generate_csc_data_word.py --input ./ccl2022/test_gen.trg --output ./ccl20
 ```
 
 代码中需要用到的文件，可从 [这里](https://pan.baidu.com/s/1fWBGkSzcsswYCVWGgorHNg?pwd=q8m3) 下载，放在ccl2022目录下
+
+
+### 生成的数据
+
+最后生成的伪数据可从 [这里](https://pan.baidu.com/s/1YHSzWKUsmR5fhlKPxhHB5w?pwd=eb3c) 下载
+
+(1) 按照第一种策略生成一份数据 1300w_process.csc
+
+(2) 将数据重采样三分，按照第二种策略生成一份数据 1300w_word.csc

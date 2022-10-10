@@ -1,0 +1,5 @@
+torch==1.7.1
+transformers==4.17.0
+pypinyin
+jieba
+pypi-kenlm

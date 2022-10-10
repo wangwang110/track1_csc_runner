@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
 from transformers import BertModel, BertForMaskedLM
+import sys
+sys.path.append("../csc_pretrain_base")
 from loss.focalloss import FocalLoss
 
 

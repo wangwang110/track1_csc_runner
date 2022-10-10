@@ -1,16 +1,18 @@
 
 # 第三阶段的精调
-PRETRAIN_MODEL=/data_local/plm_models/chinese-roberta-wwm-ext/
+
+
+CUDA_DEVICE=2
+PRETRAIN_MODEL=/home/plm_models/chinese-roberta-wwm-ext/
 
 tag="dev"
 step=3
-CUDA_DEVICE=5
+
 
 ################# 不修改 #################
 
 DATA_DIR="./data/"$tag
 mkdir -p $DATA_DIR
-
 
 TRAIN_SRC_FILE=./track1_data/dev/ccl_trck1_dev.src
 TRAIN_TRG_FILE=./track1_data/dev/ccl_trck1_dev.trg
@@ -18,9 +20,6 @@ TRAIN_TRG_FILE=./track1_data/dev/ccl_trck1_dev.trg
 DEV_SRC_FILE=./track1_data/sighan_data/dev_ae.src
 DEV_TRG_FILE=./track1_data/sighan_data/dev_ae.lbl
 
-
-DEV_SRC_FILE=./track1_data/sighan_data/dev_ae.src
-DEV_TRG_FILE=./track1_data/sighan_data/dev_ae.lbl
 
 
 if [ ! -f $DATA_DIR"/train.pkl" ]; then
