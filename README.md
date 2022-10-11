@@ -13,3 +13,13 @@ ccl2022赛道一中文拼写检查
 `
 sh ./decode_mlm_em_multi.sh
 `
+
+
+
+预训练模型下载：
+
+bert：https://huggingface.co/bert-base-chinese
+
+roberta：https://huggingface.co/hfl/chinese-roberta-wwm-ext
+
+macbert： https://huggingface.co/hfl/chinese-macbert-base
