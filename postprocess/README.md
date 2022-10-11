@@ -22,7 +22,7 @@ sh ./decode_mlm_em_multi.sh
 
 ### 相关模型下载
 
-成语匹配纠错相关文件：
+成语匹配纠错相关文件，统计语言模型比较大，分成两个文件，下载后解压第一个即可：
 链接: https://pan.baidu.com/s/1xDUZ8vQ0Bloj-zmICkPQZg
 
 提取码: vr4u
